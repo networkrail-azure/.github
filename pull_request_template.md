@@ -8,7 +8,6 @@ At minimum this should include proof that a computer has executed the changed li
 Ideally this should include an automated test or an explanation as to why this change has no tests.
 Note that automated test coverage is less than complete, so a successful PR build does not necessarily imply that a computer has executed the changed lines.
 If automated test coverage does not exist for the lines you are changing, you must describe the scenario(s) in which you manually tested the change.
-For frontend changes, include screenshots of the relevant page(s) before and after the change.
 For refactoring and code cleanup changes, exercise the code before and after the change and verify the behavior remains the same.
 -->
 

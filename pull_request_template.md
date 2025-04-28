@@ -1,4 +1,15 @@
-<!-- Please describe your pull request here. -->
+<!-- Please describe your pull request in this section. 
+What does your pull request do? Anything for the reviewer to know?
+
+If there's anything interesting to call out to reviewers, create the pull request first and then do
+a self-review, adding your open comments to the PR description to explain why something has been done in a particular way.
+-->
+
+
+### Work item 
+
+<!-- Add your work item number after AB#, Azure Boards will automatically link it for you -->
+AB#
 
 ### Testing done
 

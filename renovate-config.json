@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    "regexManagers:dockerfileVersions"
+  ],
+  "description": "Onboarding preset for use with Network Rail's repositories",
+  "timezone": "Europe/London",
+  "schedule": "after 7am and before 11am every weekday",
+  "labels": [
+    "dependencies"
+  ]
+}

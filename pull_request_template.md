@@ -8,7 +8,7 @@ a self-review, adding your open comments to the PR description to explain why so
 
 ### Work item 
 
-<!-- Add your work item number after AB#, e.g. AB#1234, Azure Boards will automatically link it for you -->
+<!-- Add your work item number after AB#, e.g. AB # 1234 (without spaces), Azure Boards will automatically link it for you -->
 AB#
 
 ### Testing done

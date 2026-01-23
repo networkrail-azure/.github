@@ -1,0 +1,120 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+version-template: '$MAJOR.$MINOR.$PATCH'
+
+# Categorize PRs in changelog by labels
+categories:
+  - title: '🚨 Breaking Changes'
+    labels:
+      - 'breaking-change'
+      - 'major'
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+      - 'minor'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bugfix'
+      - 'fix'
+      - 'patch'
+  - title: '📦 Dependencies'
+    labels:
+      - 'dependencies'
+      - 'avm-update'
+  - title: '📝 Documentation'
+    labels:
+      - 'documentation'
+      - 'docs'
+  - title: '🧪 Testing'
+    labels:
+      - 'test'
+      - 'testing'
+
+# Exclude PRs from changelog (no version bump)
+exclude-labels:
+  - 'skip-release'
+  - 'skip-changelog'
+
+# Auto-label PRs based on branch patterns and file changes
+autolabeler:
+  - label: 'documentation'
+    branch:
+      - '/docs?\/.+/'
+    files:
+      - '*.md'
+      - 'docs/**/*'
+      - 'documentation/**/*'
+  - label: 'bugfix'
+    branch:
+      - '/fix\/.+/'
+      - '/bugfix\/.+/'
+      - '/hotfix\/.+/'
+  - label: 'enhancement'
+    branch:
+      - '/feat(ure)?\/.+/'
+  - label: 'breaking-change'
+    branch:
+      - '/breaking\/.+/'
+  - label: 'dependencies'
+    files:
+      - 'renovate.json'
+      - '.github/dependabot.yml'
+  - label: 'test'
+    files:
+      - 'tests/**/*'
+
+# Version increment logic - determines which version number to bump
+version-resolver:
+  major:
+    labels:
+      - 'breaking-change'
+      - 'major'
+  minor:
+    labels:
+      - 'feature'
+      - 'enhancement'
+      - 'minor'
+  patch:
+    labels:
+      - 'bugfix'
+      - 'fix'
+      - 'patch'
+      - 'dependencies'
+      - 'avm-update'
+  default: patch
+
+# Changelog template
+template: |
+  ## What's Changed
+  
+  $CHANGES
+  
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+  
+  ## Usage
+  
+  Reference this version in your pipeline:
+  
+  ```yaml
+  resources:
+    repositories:
+      - repository: templates
+        type: github
+        name: $OWNER/$REPOSITORY
+        ref: v$RESOLVED_VERSION
+  ```
+
+# Individual PR entry format in changelog
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&'
+
+# Replacers for additional customization
+replacers:
+  # Remove conventional commit prefixes from changelog
+  - search: '/^(feat|fix|docs|chore|refactor|test|ci)(\(.+\))?: /i'
+    replace: ''
+
+no-contributors-template: |
+  This release was automatically generated.
+  

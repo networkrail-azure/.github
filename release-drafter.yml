@@ -2,7 +2,6 @@ name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 version-template: '$MAJOR.$MINOR.$PATCH'
 
-# Categorize PRs in changelog by labels
 categories:
   - title: '🚨 Breaking Changes'
     labels:
@@ -31,12 +30,10 @@ categories:
       - 'test'
       - 'testing'
 
-# Exclude PRs from changelog (no version bump)
 exclude-labels:
   - 'skip-release'
   - 'skip-changelog'
 
-# Auto-label PRs based on branch patterns and file changes
 autolabeler:
   - label: 'documentation'
     branch:
@@ -64,7 +61,6 @@ autolabeler:
     files:
       - 'tests/**/*'
 
-# Version increment logic - determines which version number to bump
 version-resolver:
   major:
     labels:
@@ -84,7 +80,6 @@ version-resolver:
       - 'avm-update'
   default: patch
 
-# Changelog template
 template: |
   ## What's Changed
   
@@ -105,13 +100,11 @@ template: |
         ref: v$RESOLVED_VERSION
   ```
 
-# Individual PR entry format in changelog
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 
-# Replacers for additional customization
 replacers:
-  # Remove conventional commit prefixes from changelog
+
   - search: '/^(feat|fix|docs|chore|refactor|test|ci)(\(.+\))?: /i'
     replace: ''
 

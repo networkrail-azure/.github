@@ -2,6 +2,7 @@ name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 version-template: '$MAJOR.$MINOR.$PATCH'
 
+# Categorize PRs in changelog by labels
 categories:
   - title: '🚨 Breaking Changes'
     labels:
@@ -17,10 +18,9 @@ categories:
       - 'bugfix'
       - 'fix'
       - 'patch'
-  - title: '📦 Dependencies'
+  - title: '📦 AVM Dependencies'
     labels:
-      - 'dependencies'
-      - 'avm-update'
+      - 'avm-dependency-update'
   - title: '📝 Documentation'
     labels:
       - 'documentation'
@@ -30,14 +30,16 @@ categories:
       - 'test'
       - 'testing'
 
+# Exclude PRs from changelog (no version bump)
 exclude-labels:
   - 'skip-release'
   - 'skip-changelog'
 
+# Auto-label PRs based on branch patterns and file changes
 autolabeler:
   - label: 'documentation'
     branch:
-      - '/docs?\/.+/'
+      - '/docs{0,1}\/.+/'
     files:
       - '*.md'
       - 'docs/**/*'
@@ -47,9 +49,9 @@ autolabeler:
       - '/fix\/.+/'
       - '/bugfix\/.+/'
       - '/hotfix\/.+/'
-  - label: 'enhancement'
+  - label: 'feature'
     branch:
-      - '/feat(ure)?\/.+/'
+      - '/feat(ure){0,1}\/.+/'
   - label: 'breaking-change'
     branch:
       - '/breaking\/.+/'
@@ -61,6 +63,7 @@ autolabeler:
     files:
       - 'tests/**/*'
 
+# Version increment logic - determines which version number to bump
 version-resolver:
   major:
     labels:
@@ -76,10 +79,10 @@ version-resolver:
       - 'bugfix'
       - 'fix'
       - 'patch'
-      - 'dependencies'
-      - 'avm-update'
+      - 'avm-dependency-update'
   default: patch
 
+# Changelog template
 template: |
   ## What's Changed
   
@@ -89,22 +92,21 @@ template: |
   
   ## Usage
   
-  Reference this version in your pipeline:
+  Reference this module in your Terraform code:
   
-  ```yaml
-  resources:
-    repositories:
-      - repository: templates
-        type: github
-        name: $OWNER/$REPOSITORY
-        ref: v$RESOLVED_VERSION
+  ```hcl
+  module "example" {
+    source = "git::https://github.com/$OWNER/$REPOSITORY?ref=v$RESOLVED_VERSION"
+  }
   ```
 
+# Individual PR entry format in changelog
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 
+# Replacers for additional customization
 replacers:
-
+  # Remove conventional commit prefixes from changelog
   - search: '/^(feat|fix|docs|chore|refactor|test|ci)(\(.+\))?: /i'
     replace: ''
 

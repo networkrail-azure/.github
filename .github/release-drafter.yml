@@ -9,7 +9,6 @@ categories:
       - 'major'
   - title: '🚀 Features'
     labels:
-      - 'feature'
       - 'enhancement'
       - 'minor'
   - title: '🐛 Bug Fixes'
@@ -35,18 +34,13 @@ exclude-labels:
 
 autolabeler:
   - label: 'documentation'
-    branch:
-      - '/docs{0,1}\/.+/'
     files:
       - '*.md'
       - 'docs/**/*'
       - 'documentation/**/*'
+  - label: 'enhancement'  
     files:
       - '**/*.tf'
-  - label: 'dependencies'
-    files:
-      - 'renovate.json'
-      - '.github/dependabot.yml'
   - label: 'test'
     files:
       - 'tests/**/*'

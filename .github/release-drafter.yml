@@ -41,19 +41,8 @@ autolabeler:
       - '*.md'
       - 'docs/**/*'
       - 'documentation/**/*'
-  - label: 'bugfix'
-    branch:
-      - '/fix\/.+/'
-      - '/bugfix\/.+/'
-      - '/hotfix\/.+/'
-  - label: 'feature'
-    branch:
-      - '/feat(ure){0,1}\/.+/'
     files:
       - '**/*.tf'
-  - label: 'breaking-change'
-    branch:
-      - '/breaking\/.+/'
   - label: 'dependencies'
     files:
       - 'renovate.json'

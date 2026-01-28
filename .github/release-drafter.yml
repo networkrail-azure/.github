@@ -35,6 +35,8 @@ exclude-labels:
 
 autolabeler:
   - label: 'documentation'
+    branch:
+      - '/docs?\/.+/'
     files:
       - '*.md'
       - 'docs/**/*'
@@ -50,6 +52,14 @@ autolabeler:
       - 'locals.tf'
       - 'data.tf'
       - 'provider.tf'
+  - label: 'bugfix'
+    branch:
+      - '/fix\/.+/'
+      - '/bugfix\/.+/'
+      - '/hotfix\/.+/'
+  - label: 'breaking-change'
+    branch:
+      - '/breaking\/.+/'
   - label: 'test'
     files:
       - 'tests/**/*'

@@ -9,6 +9,7 @@ categories:
       - 'major'
   - title: '🚀 Features'
     labels:
+      - 'feature'
       - 'enhancement'
       - 'minor'
   - title: '🐛 Bug Fixes'

@@ -17,10 +17,9 @@ categories:
       - 'bugfix'
       - 'fix'
       - 'patch'
-  - title: '📦 Dependencies'
+  - title: '📦 AVM Dependencies'
     labels:
-      - 'dependencies'
-      - 'avm-update'
+      - 'avm-dependency-update'
   - title: '📝 Documentation'
     labels:
       - 'documentation'
@@ -30,9 +29,9 @@ categories:
       - 'test'
       - 'testing'
 
-exclude-labels:
-  - 'skip-release'
-  - 'skip-changelog'
+  - exclude-labels:
+      - 'skip-release'
+      - 'skip-changelog'
 
 autolabeler:
   - label: 'documentation'
@@ -42,21 +41,29 @@ autolabeler:
       - '*.md'
       - 'docs/**/*'
       - 'documentation/**/*'
+  - label: 'enhancement'
+    branch:
+      - '/feat(ure)?\/.+/'
+    files:
+      - 'modules/**/*.tf'
+      - 'main.tf'
+      - 'variables.tf'
+      - 'outputs.tf'
+      - 'locals.tf'
+      - 'data.tf'
+      - 'provider.tf'
+    exclude-labels:
+      - '*.md'
+      - 'docs/**/*'
+      - 'documentation/**/*'  
   - label: 'bugfix'
     branch:
       - '/fix\/.+/'
       - '/bugfix\/.+/'
       - '/hotfix\/.+/'
-  - label: 'enhancement'
-    branch:
-      - '/feat(ure)?\/.+/'
   - label: 'breaking-change'
     branch:
       - '/breaking\/.+/'
-  - label: 'dependencies'
-    files:
-      - 'renovate.json'
-      - '.github/dependabot.yml'
   - label: 'test'
     files:
       - 'tests/**/*'
@@ -76,8 +83,7 @@ version-resolver:
       - 'bugfix'
       - 'fix'
       - 'patch'
-      - 'dependencies'
-      - 'avm-update'
+      - 'avm-dependency-update'
   default: patch
 
 template: |
@@ -89,22 +95,18 @@ template: |
   
   ## Usage
   
-  Reference this version in your pipeline:
+  Reference this module in your Terraform code:
   
-  ```yaml
-  resources:
-    repositories:
-      - repository: templates
-        type: github
-        name: $OWNER/$REPOSITORY
-        ref: v$RESOLVED_VERSION
+  ```hcl
+  module "example" {
+    source = "git::https://github.com/$OWNER/$REPOSITORY?ref=v$RESOLVED_VERSION"
+  }
   ```
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 
 replacers:
-
   - search: '/^(feat|fix|docs|chore|refactor|test|ci)(\(.+\))?: /i'
     replace: ''
 

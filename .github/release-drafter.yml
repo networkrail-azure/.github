@@ -49,7 +49,6 @@ autolabeler:
       - 'outputs.tf'
       - 'locals.tf'
       - 'data.tf'
-      - 'versions.tf'
       - 'provider.tf'
   - label: 'test'
     files:

@@ -39,9 +39,6 @@ autolabeler:
       - '*.md'
       - 'docs/**/*'
       - 'documentation/**/*'
-  - label: 'enhancement'  
-    files:
-      - '**/*.tf'
   - label: 'test'
     files:
       - 'tests/**/*'

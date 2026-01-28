@@ -39,9 +39,18 @@ autolabeler:
       - '*.md'
       - 'docs/**/*'
       - 'documentation/**/*'
-  - label: 'enhancement'  
+  - label: 'enhancement'
+    branch:
+      - '/feat(ure)?\/.+/'
     files:
-      - '**/*.tf'
+      - 'modules/**/*.tf'
+      - 'main.tf'
+      - 'variables.tf'
+      - 'outputs.tf'
+      - 'locals.tf'
+      - 'data.tf'
+      - 'versions.tf'
+      - 'provider.tf'
   - label: 'test'
     files:
       - 'tests/**/*'

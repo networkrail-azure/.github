@@ -52,6 +52,10 @@ autolabeler:
       - 'locals.tf'
       - 'data.tf'
       - 'provider.tf'
+    exclude:
+      - '*.md'
+      - 'docs/**/*'
+      - 'documentation/**/*'  
   - label: 'bugfix'
     branch:
       - '/fix\/.+/'

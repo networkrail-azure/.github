@@ -29,9 +29,9 @@ categories:
       - 'test'
       - 'testing'
 
-  - exclude-labels:
-      - 'skip-release'
-      - 'skip-changelog'
+exclude-labels:
+  - 'skip-release'
+  - 'skip-changelog'
 
 autolabeler:
   - label: 'documentation'
@@ -52,10 +52,6 @@ autolabeler:
       - 'locals.tf'
       - 'data.tf'
       - 'provider.tf'
-    exclude-labels:
-      - '*.md'
-      - 'docs/**/*'
-      - 'documentation/**/*'  
   - label: 'bugfix'
     branch:
       - '/fix\/.+/'
@@ -112,3 +108,5 @@ replacers:
 
 no-contributors-template: |
   This release was automatically generated.
+  
+  

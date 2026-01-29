@@ -29,9 +29,9 @@ categories:
       - 'test'
       - 'testing'
 
-  - exclude-labels:
-      - 'skip-release'
-      - 'skip-changelog'
+exclude-labels:
+  - 'skip-release'
+  - 'skip-changelog'
 
 autolabeler:
   - label: 'documentation'

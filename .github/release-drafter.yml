@@ -51,7 +51,6 @@ autolabeler:
       - 'outputs.tf'
       - 'locals.tf'
       - 'data.tf'
-      - 'provider.tf'
     exclude-labels:
       - '*.md'
       - 'docs/**/*'

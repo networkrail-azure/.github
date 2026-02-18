@@ -44,13 +44,6 @@ autolabeler:
   - label: 'enhancement'
     branch:
       - '/feat(ure)?\/.+/'
-    files:
-      - 'modules/**/*.tf'
-      - 'main.tf'
-      - 'variables.tf'
-      - 'outputs.tf'
-      - 'locals.tf'
-      - 'data.tf'
     exclude-labels:
       - '*.md'
       - 'docs/**/*'

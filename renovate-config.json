@@ -4,7 +4,7 @@
     "config:recommended",
     ":dependencyDashboard",
     "regexManagers:dockerfileVersions",
-    "schedule:earlyMondays",
+    "schedule:earlyMondays"
   ],
   "description": "Onboarding preset for use with Network Rail's repositories",
   "timezone": "Europe/London",

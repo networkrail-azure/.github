@@ -3,6 +3,22 @@ What does your pull request do? Anything for the reviewer to know?
 
 If there's anything interesting to call out to reviewers, create the pull request first and then do
 a self-review, adding your open comments to the PR description to explain why something has been done in a particular way.
+
+Important: This applies only to module repositories.
+Semantic versioning (SemVer) uses the format **MAJOR.MINOR.PATCH** to indicate the impact of a change.  
+MAJOR = breaking change, MINOR = new feature, PATCH = fix — and the label you choose should match this impact.
+
+Choose **one**:
+
+-  major → breaking change (e.g., 1.0.0 → 2.0.0)  
+  _Example: consumers must update their code._
+
+-  enhancement → new, backward‑compatible feature (e.g., 1.0.0 → 1.1.0)  
+  _Example: adds an optional variable or resource._
+
+-  bug → backward‑compatible fix (e.g., 1.0.0 → 1.0.1)  
+  _Example: corrects a value, attribute, or default._
+
 -->
 
 

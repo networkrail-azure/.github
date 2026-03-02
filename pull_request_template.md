@@ -12,13 +12,13 @@ MAJOR = breaking change, MINOR = new feature, PATCH = fix — choose the label t
 Choose one:
 
 -  major → breaking change (e.g., 1.0.0 → 2.0.0)  
-  _Example: consumers must update their code._
+   Example: consumers must update their code.
 
 -  enhancement → new, backward‑compatible feature (e.g., 1.0.0 → 1.1.0)  
-  _Example: adds an optional variable or resource._
+   Example: adds an optional variable or resource.
 
 -  bugfix or patch → backward‑compatible fix (e.g., 1.0.0 → 1.0.1)  
-  _Example: corrects a value, attribute, or default._
+   Example: corrects a value, attribute, or default.
 
 -->
 

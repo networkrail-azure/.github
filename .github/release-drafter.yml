@@ -14,8 +14,8 @@ categories:
       - 'minor'
   - title: '🐛 Bug Fixes'
     labels:
+      - 'bug'
       - 'bugfix'
-      - 'fix'
       - 'patch'
   - title: '📦 AVM Dependencies'
     labels:
@@ -51,7 +51,7 @@ autolabeler:
   - label: 'bugfix'
     branch:
       - '/fix\/.+/'
-      - '/bugfix\/.+/'
+      - '/bug(fix)?\/.+/'
       - '/hotfix\/.+/'
   - label: 'breaking-change'
     branch:

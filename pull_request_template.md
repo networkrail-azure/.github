@@ -6,7 +6,7 @@ a self-review, adding your open comments to the PR description to explain why so
 
 Important: This applies only to module repositories.  
 Please label this PR to indicate the impact of your change.  
-These labels correlate to Semantic Versioning (SemVer), which uses the format **MAJOR.MINOR.PATCH** to reflect the level of impact:  
+These labels correlate to Semantic Versioning (SemVer), which uses the format MAJOR.MINOR.PATCH to reflect the level of impact:  
 MAJOR = breaking change, MINOR = new feature, PATCH = fix — choose the label that matches your change.
 
 Choose **one**:

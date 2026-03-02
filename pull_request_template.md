@@ -17,7 +17,7 @@ Choose **one**:
 -  enhancement → new, backward‑compatible feature (e.g., 1.0.0 → 1.1.0)  
   _Example: adds an optional variable or resource._
 
--  bug → backward‑compatible fix (e.g., 1.0.0 → 1.0.1)  
+-  bugfix or patch → backward‑compatible fix (e.g., 1.0.0 → 1.0.1)  
   _Example: corrects a value, attribute, or default._
 
 -->

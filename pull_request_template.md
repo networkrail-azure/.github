@@ -9,7 +9,7 @@ Please label this PR to indicate the impact of your change.
 These labels correlate to Semantic Versioning (SemVer), which uses the format MAJOR.MINOR.PATCH to reflect the level of impact:  
 MAJOR = breaking change, MINOR = new feature, PATCH = fix — choose the label that matches your change.
 
-Choose **one**:
+Choose one:
 
 -  major → breaking change (e.g., 1.0.0 → 2.0.0)  
   _Example: consumers must update their code._

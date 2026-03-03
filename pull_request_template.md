@@ -16,7 +16,7 @@ Example: consumers must update their code.
 enhancement → new, backward‑compatible feature (e.g., 1.0.0 → 1.1.0)  
 Example: adds an optional variable or resource.
 
-bugfix or patch → backward‑compatible fix (e.g., 1.0.0 → 1.0.1)  
+bug → backward‑compatible fix (e.g., 1.0.0 → 1.0.1)  
 Example: corrects a value, attribute, or default.
 
 -->
